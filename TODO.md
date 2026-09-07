@@ -86,6 +86,7 @@
 - [ ] Run full test suite
 - [ ] Check `npm audit` for vulnerabilities
 - [ ] Update dependencies if safe
+- [ ] Enforce brevity: delete dead code, remove unused imports, shorten functions
 
 ### Business Development
 - [ ] Review weekly leads from `business/leads/`

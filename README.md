@@ -324,7 +324,7 @@ bash ~/agentic-studio/business/portfolio-updater.sh
 - No jargon soup, no emoji spam
 - 2-3 hashtags max
 - Ends with a question or CTA
-- See `business/human-style-guide.md` for full rules
+- See `business/human-style-guide.md` for full `/human` rules
 
 **Workflow:**
 1. Drafts land in `business/queue/`
