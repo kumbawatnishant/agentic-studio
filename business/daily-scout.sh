@@ -53,8 +53,9 @@ echo "$SCORED" > "$LEADS_DIR/scored_$(date +%Y-%m-%d).json" || true
 
 # 3. Generate tailored applications for top matches
 echo "✍️  Generating tailored applications..."
-COUNT=$(jq 'length' "$LEADS_DIR/scored_$(date +%Y-%m-%d).json" 2>/dev/null || echo 0)
-if [ "$COUNT" -gt 0 ]; then
+COUNT=$(jq 'if type=="array" then length else 0 end' "$LEADS_DIR/scored_$(date +%Y-%m-%d).json" 2>/dev/null || echo 0)
+COUNT=${COUNT:-0}
+if [ "$COUNT" -gt 0 ] 2>/dev/null; then
     for i in $(seq 0 $((COUNT > 5 ? 4 : COUNT - 1))); do
         COMPANY=$(jq -r ".[$i].company // \"unknown\"" "$LEADS_DIR/scored_$(date +%Y-%m-%d).json" 2>/dev/null || echo "unknown")
         ROLE=$(jq -r ".[$i].role // \"developer\"" "$LEADS_DIR/scored_$(date +%Y-%m-%d).json" 2>/dev/null || echo "developer")
