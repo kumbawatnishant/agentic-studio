@@ -1,0 +1,45 @@
+{
+  "project": "my-saas-app",
+  "backlog": [
+    {
+      "id": "T001",
+      "title": "Set up Next.js project with shadcn",
+      "agent": "devops",
+      "status": "todo",
+      "depends_on": [],
+      "acceptance": ["Project builds", "Dev server starts", "Git initialized"]
+    },
+    {
+      "id": "T002",
+      "title": "Design database schema for users and posts",
+      "agent": "architect",
+      "status": "todo",
+      "depends_on": ["T001"],
+      "acceptance": ["Schema documented", "Migration files created", "Indexes defined"]
+    },
+    {
+      "id": "T003",
+      "title": "Implement auth with NextAuth",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T002"],
+      "acceptance": ["Login works", "Session persists", "Protected routes enforced"]
+    },
+    {
+      "id": "T004",
+      "title": "Create landing page design system",
+      "agent": "designer",
+      "status": "todo",
+      "depends_on": ["T001"],
+      "acceptance": ["Design tokens defined", "Hero component spec", "Mobile responsive"]
+    },
+    {
+      "id": "T005",
+      "title": "Write E2E tests for auth flow",
+      "agent": "tester",
+      "status": "todo",
+      "depends_on": ["T003"],
+      "acceptance": ["Login test passes", "Signup test passes", "Logout test passes"]
+    }
+  ]
+}
