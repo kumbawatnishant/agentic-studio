@@ -16,7 +16,7 @@ DRAFTS_DIR="$PROJECT_DIR/business/drafts"
 QUEUE_DIR="$PROJECT_DIR/business/queue"
 mkdir -p "$DRAFTS_DIR" "$QUEUE_DIR"
 
-GEMINI_API_URL="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+GEMINI_API_URL="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent"
 
 gemini_chat() {
     local prompt="$1"
@@ -77,6 +77,7 @@ gemini_chat "Write a 500-word blog post outline for 'Building $PROJECT_NAME'. De
 
 # 5. Update portfolio data
 echo "  → Updating portfolio data..."
+mkdir -p "$PROJECT_DIR/projects/$PROJECT_NAME"
 cat > "$PROJECT_DIR/projects/$PROJECT_NAME/project.json" << EOF
 {
   "name": "$PROJECT_NAME",

@@ -22,7 +22,7 @@ OUTREACH_DIR="$PROJECT_DIR/business/outreach"
 
 mkdir -p "$LEADS_DIR" "$APPLICATIONS_DIR" "$OUTREACH_DIR"
 
-GEMINI_API_URL="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+GEMINI_API_URL="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent"
 
 gemini_chat() {
     local prompt="$1"
