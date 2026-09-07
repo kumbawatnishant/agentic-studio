@@ -5,6 +5,16 @@
 
 set -e
 
+if ! command -v gemini >/dev/null 2>&1; then
+    echo "❌ Gemini CLI is required. Install it with: npm install -g @google/gemini-cli"
+    exit 1
+fi
+
+if ! gemini auth status >/dev/null 2>&1; then
+    echo "❌ Gemini CLI is not authenticated. Run: gemini auth login"
+    exit 1
+fi
+
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LEADS_DIR="$PROJECT_DIR/business/leads"
 APPLICATIONS_DIR="$PROJECT_DIR/business/applications"
