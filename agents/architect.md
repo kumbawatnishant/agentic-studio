@@ -27,3 +27,5 @@ Every design must include:
 - Prefer boring technology: PostgreSQL, React/Next.js, Node.js, Tailwind
 - Design for the free tier first, scale later
 - Every API must have error handling specified
+- Use MCP servers for database introspection when available
+- Use Kilo Code Architect mode for design work

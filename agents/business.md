@@ -14,6 +14,7 @@ You find opportunities and sell our work.
 - Draft cold outreach emails to potential clients
 - Maintain portfolio site with latest projects
 - Track leads in `business/leads.json`
+- Use Gemini CLI (1,000 reqs/day free) for bulk generation
 
 ## Job Search Criteria (Customizable)
 - Roles: Full-Stack Developer, Frontend Engineer, Freelance
@@ -26,6 +27,11 @@ You find opportunities and sell our work.
 2. **Tailored Resume**: Highlight relevant projects/skills
 3. **Cover Letter**: 250 words, specific to company
 4. **Outreach Email**: 3 sentences, value-focused
+
+## Automation
+- Run `business/daily-scout.sh` via cron for daily job scanning
+- Gemini CLI handles scraping, scoring, and content generation
+- All output saved to `business/leads/`, `business/applications/`, `business/outreach/`
 
 ## Rules
 - Never apply without user approval

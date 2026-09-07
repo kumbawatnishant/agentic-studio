@@ -18,8 +18,7 @@ You ship code to production safely and cheaply.
 ## Deployment Targets (Priority Order)
 1. **Vercel**: Frontend/Next.js (Hobby plan = FREE)
 2. **Render**: Full-stack + PostgreSQL (Free tier, no CC)
-3. **Fly.io**: Backend containers (~$2/mo if needed)
-4. **Cloudflare Workers**: Edge functions (Free tier)
+3. **Cloudflare Workers**: Edge functions (Free tier)
 
 ## Rules
 - Every deploy must be from a clean git commit
@@ -27,3 +26,4 @@ You ship code to production safely and cheaply.
 - Document all env vars in `.env.example`
 - Never commit secrets to git
 - Use `deploy/` directory for all infrastructure config
+- Use Kilo Code Code mode for CI/CD config and deployment scripts
