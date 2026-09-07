@@ -82,6 +82,17 @@ if [ "$CONFIRM" = "y" ]; then
     mv tasks.tmp.json tasks.json
     git add -A && git commit -m "feat: complete $TASK — $TASK_TITLE"
     echo "✅ Committed!"
+
+    # Generate social content for the completed task/project
+    echo ""
+    read -p "📱 Generate social content for this project? (y/n): " SOCIAL_CONFIRM
+    if [ "$SOCIAL_CONFIRM" = "y" ]; then
+        read -p "   Project name (default: current folder): " PNAME
+        PNAME=${PNAME:-$(basename "$PROJECT_DIR")}
+        read -p "   Short description (1 line): " PDESC
+        read -p "   Tech stack (comma-separated): " PTECH
+        bash "$(dirname "$0")/on-task-complete.sh" "$PNAME" "$PDESC" "$PTECH"
+    fi
 else
     echo "⚠️  Task marked as blocked. Fix issues and run again."
     exit 1

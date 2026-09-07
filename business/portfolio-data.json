@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "name": "E-Commerce API",
+      "description": "Full-stack e-commerce with Stripe checkout and inventory management",
+      "tech": ["Next.js", "PostgreSQL", "Stripe", "Tailwind"],
+      "liveUrl": "https://shop-demo.vercel.app",
+      "githubUrl": "https://github.com/yourusername/shop",
+      "image": "/projects/shop.png",
+      "date": "2026-09-01",
+      "status": "shipped"
+    },
+    {
+      "name": "Task Manager",
+      "description": "Real-time collaborative task manager with WebSockets",
+      "tech": ["Node.js", "React", "Socket.io", "MongoDB"],
+      "liveUrl": "https://tasks-demo.vercel.app",
+      "githubUrl": "https://github.com/yourusername/tasks",
+      "image": "/projects/tasks.png",
+      "date": "2026-08-15",
+      "status": "shipped"
+    }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "Tailwind", "TypeScript"],
+    "backend": ["Node.js", "Express", "PostgreSQL", "MongoDB"],
+    "devops": ["Vercel", "Render", "GitHub Actions", "Docker"]
+  },
+  "contact": {
+    "email": "you@example.com",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "calendly": "https://calendly.com/yourusername"
+  }
+}

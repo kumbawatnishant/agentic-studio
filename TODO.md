@@ -63,7 +63,14 @@
 - [ ] Spawn Kilo Code session for current task
 - [ ] Complete task, run tests, confirm in terminal
 - [ ] Task auto-commits, move to next
+- [ ] When prompted, generate social content for completed project
 - [ ] Repeat until backlog empty
+
+### Social Content (auto-triggered)
+- [ ] Review drafts in `business/queue/`
+- [ ] Edit in your voice — keep it human, specific, short
+- [ ] Post manually to LinkedIn / Twitter / Instagram
+- [ ] Move posted files to `business/posted/`
 
 ### End of Day
 - [ ] Update `tasks.json` with any new tasks discovered
@@ -85,6 +92,8 @@
 - [ ] Send approved outreach emails
 - [ ] Update portfolio with latest projects
 - [ ] Tailor resume for top 3 matches
+- [ ] Generate social content for shipped projects
+- [ ] Post to LinkedIn/Twitter/Instagram manually from `business/queue/`
 
 ### Infrastructure
 - [ ] Check Vercel / Render deployment logs
@@ -126,7 +135,8 @@ New task
         │
         ├─ Job search? → daily-scout.sh
         ├─ Cover letter? → Gemini direct call
-        └─ Outreach? → Gemini + templates/outreach-templates.md
+        ├─ Outreach? → Gemini + templates/outreach-templates.md
+        └─ Social content? → content-generator.sh → review in queue/ → manual post
 ```
 
 ---
@@ -171,6 +181,7 @@ vercel --prod
 - [ ] Blackbox AI free tier has daily credit limits
 - [ ] Render free DB spins down after inactivity (1 min cold start)
 - [ ] No persistent agent memory between sessions without manual context passing
+- [ ] Social content drafts need human review — auto-posting violates platform TOS
 
 ---
 
