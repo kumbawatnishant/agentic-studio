@@ -1,0 +1,40 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "description": "A sample project built with Agentic Studio orchestrator",
+  "techStack": ["Node.js", "Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Design database schema for users and posts",
+      "agent": "architect",
+      "status": "todo",
+      "depends_on": [],
+      "acceptance": ["Schema documented", "Migration files created", "Indexes defined"]
+    },
+    {
+      "id": "T002",
+      "title": "Implement user authentication API",
+      "agent": "coder",
+      "status": "todo",
+      "depends_on": ["T001"],
+      "acceptance": ["Login works", "Session persists", "Protected routes enforced"]
+    },
+    {
+      "id": "T003",
+      "title": "Create landing page design system",
+      "agent": "coder",
+      "status": "todo",
+      "depends_on": [],
+      "acceptance": ["Design tokens defined", "Hero component spec", "Mobile responsive"]
+    },
+    {
+      "id": "T004",
+      "title": "Write E2E tests for auth flow",
+      "agent": "tester",
+      "status": "todo",
+      "depends_on": ["T002"],
+      "acceptance": ["Login test passes", "Signup test passes", "Logout test passes"]
+    }
+  ]
+}

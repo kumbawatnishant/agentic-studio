@@ -1,0 +1,60 @@
+{
+  "kilo.modelTier": "free",
+  "kilo.defaultMode": "code",
+  "kilo.parallelAgents": true,
+  "kilo.gitWorktrees": true,
+  "kilo.autoCommit": true,
+  "kilo.autoRunTests": true,
+  "kilo.mcpServers": [
+    {
+      "name": "postgres",
+      "command": "npx -y @modelcontextprotocol/server-postgres",
+      "args": ["--connection-string", "${env:DATABASE_URL}"]
+    },
+    {
+      "name": "browser",
+      "command": "npx -y @modelcontextprotocol/server-puppeteer"
+    },
+    {
+      "name": "filesystem",
+      "command": "npx -y @modelcontextprotocol/server-filesystem",
+      "args": ["/home/nishantk/Desktop/Agents/agentic-studio/projects/ludo-game"]
+    }
+  ],
+  "kilo.agentPrompts": {
+    "architect": "${workspaceFolder}/.vscode/kilocode-agents/architect.md",
+    "developer": "${workspaceFolder}/.vscode/kilocode-agents/developer.md",
+    "designer": "${workspaceFolder}/.vscode/kilocode-agents/designer.md",
+    "tester": "${workspaceFolder}/.vscode/kilocode-agents/tester.md",
+    "devops": "${workspaceFolder}/.vscode/kilocode-agents/devops.md",
+    "business": "${workspaceFolder}/.vscode/kilocode-agents/business.md",
+    "project-manager": "${workspaceFolder}/.vscode/kilocode-agents/project-manager.md"
+  },
+  "kilo.agentModes": {
+    "architect": {
+      "model": "free",
+      "temperature": 0.2,
+      "tools": ["read", "write", "mcp"],
+      "deniedTools": ["bash"]
+    },
+    "code": {
+      "model": "free",
+      "temperature": 0.1,
+      "tools": ["read", "write", "bash", "mcp", "git"]
+    },
+    "debug": {
+      "model": "free",
+      "temperature": 0.0,
+      "tools": ["read", "bash", "mcp"],
+      "deniedTools": ["write"]
+    }
+  },
+  "github.copilot.enable": false,
+  "github.copilot.chat.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnSave": true,
+  "prettier.enable": true
+}

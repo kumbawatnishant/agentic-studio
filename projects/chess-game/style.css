@@ -1,0 +1,382 @@
+/* Chess Game - Complete Styling */
+
+:root {
+  --light-square: #f0d9b5;
+  --dark-square: #b58863;
+  --selected-square: #f0f090;
+  --valid-move: rgba(106, 194, 92, 0.5);
+  --valid-capture: rgba(220, 76, 76, 0.5);
+  --text-color: #2d2d2d;
+  --bg-color: #f5f5f5;
+  --panel-bg: #ffffff;
+  --accent-color: #4a90d9;
+  --accent-hover: #3a7bc8;
+  --border-color: #ddd;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.game {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.board-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.status {
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: var(--panel-bg);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-height: 24px;
+  box-shadow: var(--shadow);
+  color: var(--accent-color);
+}
+
+.status.check {
+  color: #e74c3c;
+}
+
+.status.checkmate {
+  color: #e74c3c;
+  font-size: 1.2rem;
+}
+
+.status.draw {
+  color: #f39c12;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  border: 4px solid #5d4037;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  user-select: none;
+}
+
+.board.flipped {
+  transform: rotate(180deg);
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: normal;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.square.light {
+  background-color: var(--light-square);
+}
+
+.square.dark {
+  background-color: var(--dark-square);
+}
+
+.square.selected {
+  background-color: var(--selected-square);
+  position: relative;
+}
+
+.square.selected::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: rgba(74, 144, 217, 0.3);
+}
+
+.square.highlight {
+  background-color: var(--valid-move);
+}
+
+.square.capture-highlight {
+  background-color: var(--valid-capture);
+  position: relative;
+}
+
+.square.capture-highlight::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: rgba(220, 76, 76, 0.3);
+}
+
+.square.last-move {
+  background-color: rgba(186, 202, 65, 0.4);
+}
+
+.coordinates {
+  position: absolute;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.controls {
+  flex: 0 0 300px;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mode-select {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode-select label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.mode-select select {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.mode-select select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#newGame {
+  background: var(--accent-color);
+  color: white;
+}
+
+#newGame:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+#undo {
+  background: #9b59b6;
+  color: white;
+}
+
+#undo:hover {
+  background: #8e44ad;
+  transform: translateY(-1px);
+}
+
+#flip {
+  background: #1abc9c;
+  color: white;
+}
+
+#flip:hover {
+  background: #16a085;
+  transform: translateY(-1px);
+}
+
+#hint {
+  background: #e67e22;
+  color: white;
+}
+
+#hint:hover {
+  background: #d35400;
+  transform: translateY(-1px);
+}
+
+.move-list {
+  flex: 1;
+}
+
+.move-list h3 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.move-list ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.move-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.move-list li:nth-child(odd) {
+  font-weight: 600;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 320px;
+  width: 90%;
+}
+
+.modal-content h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+}
+
+.promotion-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.promotion-options button {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.promotion-options button:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .app h1 {
+    font-size: 1.5rem;
+  }
+
+  .square {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .square {
+    font-size: 1.3rem;
+  }
+
+  .buttons {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}

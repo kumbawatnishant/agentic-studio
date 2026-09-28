@@ -1,0 +1,85 @@
+{
+  "project": "chess-game",
+  "backlog": [
+    {
+      "id": "T001",
+      "title": "Initialize project structure and dependencies",
+      "agent": "devops",
+      "status": "done",
+      "depends_on": [],
+      "acceptance": ["Project builds", "Dev server starts", "Git initialized", "Dependencies installed"]
+    },
+    {
+      "id": "T002",
+      "title": "Design chess game architecture and data models",
+      "agent": "architect",
+      "status": "done",
+      "depends_on": ["T001"],
+      "acceptance": ["Game state types defined", "Move representation defined", "Board representation specified", "FEN/ PGN support planned"]
+    },
+    {
+      "id": "T003",
+      "title": "Create design system and theme",
+      "agent": "designer",
+      "status": "done",
+      "depends_on": ["T001"],
+      "acceptance": ["Color palette defined", "CSS variables created", "Piece styles defined", "Board styling complete", "Responsive breakpoints configured"]
+    },
+    {
+      "id": "T004",
+      "title": "Implement chess engine (rules, move generation, validation)",
+      "agent": "developer",
+      "status": "done",
+      "depends_on": ["T002"],
+      "acceptance": ["Board representation complete", "All piece moves generated", "Move validation works", "Castling implemented", "En passant implemented", "Pawn promotion implemented", "Check/checkmate/stalemate detection", "Draw rules (50-move, repetition, insufficient material)", "FEN import/export works", "PGN export works"]
+    },
+    {
+      "id": "T005",
+      "title": "Implement AI opponent (minimax with alpha-beta pruning)",
+      "agent": "developer",
+      "status": "done",
+      "depends_on": ["T004"],
+      "acceptance": ["Minimax search works", "Alpha-beta pruning implemented", "Evaluation function complete", "Multiple difficulty levels", "Time management"]
+    },
+    {
+      "id": "T006",
+      "title": "Build responsive chess board component",
+      "agent": "developer",
+      "status": "done",
+      "depends_on": ["T003", "T004"],
+      "acceptance": ["Board renders correctly", "All 64 squares visible", "Coordinates displayed", "Responsive on mobile/desktop", "Board flip works"]
+    },
+    {
+      "id": "T007",
+      "title": "Implement piece rendering and drag/drop or click-to-move",
+      "agent": "developer",
+      "status": "done",
+      "depends_on": ["T003", "T004", "T006"],
+      "acceptance": ["Pieces render correctly", "Valid moves highlighted", "Click-to-move works", "Drag-and-drop works", "Animations smooth", "Piece promotion modal works"]
+    },
+    {
+      "id": "T008",
+      "title": "Build game UI with controls (new game, undo, flip, hint, move list)",
+      "agent": "developer",
+      "status": "done",
+      "depends_on": ["T003", "T004", "T006", "T007"],
+      "acceptance": ["New game button works", "Undo works", "Flip board works", "Hint shows best move", "Move list updates", "Game status displays (check, mate, draw)", "Mode selection works (PvP, vs AI)", "Color selection works"]
+    },
+    {
+      "id": "T009",
+      "title": "Write unit tests for chess engine",
+      "agent": "tester",
+      "status": "done",
+      "depends_on": ["T004"],
+      "acceptance": ["Move generation tested", "Move validation tested", "Check/mate detection tested", "Special moves tested", "Draw rules tested", "FEN/PGN tested", "80%+ coverage"]
+    },
+    {
+      "id": "T010",
+      "title": "Write integration tests for UI",
+      "agent": "tester",
+      "status": "done",
+      "depends_on": ["T008"],
+      "acceptance": ["Game flow tested", "AI moves tested", "Undo/redo tested", "Promotion flow tested"]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "project": "ludo-game",
+  "backlog": [
+    {
+      "id": "T001",
+      "title": "Initialize Next.js project with TypeScript, Tailwind, and dependencies",
+      "agent": "devops",
+      "status": "todo",
+      "depends_on": [],
+      "acceptance": ["Project builds", "Dev server starts", "Git initialized", "Dependencies installed"]
+    },
+    {
+      "id": "T002",
+      "title": "Design game architecture and data models",
+      "agent": "architect",
+      "status": "todo",
+      "depends_on": ["T001"],
+      "acceptance": ["Game state types defined", "Socket events documented", "Board geometry specified", "API contracts defined"]
+    },
+    {
+      "id": "T003",
+      "title": "Create custom theme and design system",
+      "agent": "designer",
+      "status": "todo",
+      "depends_on": ["T001"],
+      "acceptance": ["Color palette defined", "CSS variables created", "Typography scale set", "Component tokens defined", "Responsive breakpoints configured"]
+    },
+    {
+      "id": "T004",
+      "title": "Implement Ludo game engine (rules, state machine)",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T002"],
+      "acceptance": ["Board representation complete", "Move validation works", "Win detection works", "Safe zones enforced", "Home path logic correct"]
+    },
+    {
+      "id": "T005",
+      "title": "Build Socket.io server for real-time multiplayer",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T002", "T004"],
+      "acceptance": ["Room management works", "Player join/leave handled", "Game state sync works", "Reconnection supported", "Turn management works"]
+    },
+    {
+      "id": "T006",
+      "title": "Create responsive game board component",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T003", "T004"],
+      "acceptance": ["Board renders correctly", "All 52 squares visible", "Home paths shown", "Safe zones highlighted", "Responsive on mobile/desktop"]
+    },
+    {
+      "id": "T007",
+      "title": "Build dice component with animation",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T003"],
+      "acceptance": ["Dice rolls animate", "Value displays correctly", "Roll button disabled during turn", "Accessible keyboard support"]
+    },
+    {
+      "id": "T008",
+      "title": "Implement player pieces with drag/drop or click-to-move",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T003", "T004", "T006"],
+      "acceptance": ["Pieces render in base", "Valid moves highlighted", "Click/tap to move works", "Animations smooth", "Piece stacking handled"]
+    },
+    {
+      "id": "T009",
+      "title": "Create lobby with room creation/join",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T003", "T005"],
+      "acceptance": ["Create room generates code", "Join room by code works", "Player list updates real-time", "Start game button works", "Max 4 players enforced"]
+    },
+    {
+      "id": "T010",
+      "title": "Build game page with full UI integration",
+      "agent": "developer",
+      "status": "todo",
+      "depends_on": ["T005", "T006", "T007", "T008", "T009"],
+      "acceptance": ["Board + dice + pieces integrated", "Turn indicator shows", "Player info panel works", "Game status messages display", "Responsive layout works"]
+    },
+    {
+      "id": "T011",
+      "title": "Add landing page with game rules and navigation",
+      "agent": "designer",
+      "status": "todo",
+      "depends_on": ["T003"],
+      "acceptance": ["Landing page styled", "Rules displayed clearly", "Play button navigates to lobby", "Theme consistent"]
+    },
+    {
+      "id": "T012",
+      "title": "Write unit tests for game engine",
+      "agent": "tester",
+      "status": "todo",
+      "depends_on": ["T004"],
+      "acceptance": ["Move validation tested", "Win conditions tested", "Edge cases covered", "80%+ coverage"]
+    },
+    {
+      "id": "T013",
+      "title": "Write integration tests for Socket.io events",
+      "agent": "tester",
+      "status": "todo",
+      "depends_on": ["T005"],
+      "acceptance": ["Room events tested", "Game flow tested", "Reconnection tested"]
+    },
+    {
+      "id": "T014",
+      "title": "Write E2E tests for critical user flows",
+      "agent": "tester",
+      "status": "todo",
+      "depends_on": ["T010"],
+      "acceptance": ["Create room → join → play flow", "Full game completion", "Mobile viewport tested"]
+    },
+    {
+      "id": "T015",
+      "title": "Configure deployment (Vercel + Render)",
+      "agent": "devops",
+      "status": "todo",
+      "depends_on": ["T010"],
+      "acceptance": ["Vercel config ready", "Render config ready", "Environment variables documented", "Build passes"]
+    }
+  ]
+}

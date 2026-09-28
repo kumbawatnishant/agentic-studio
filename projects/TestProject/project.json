@@ -1,9 +1,0 @@
-{
-  "name": "TestProject",
-  "description": "A minimal Next.js app with a /hello route",
-  "tech": ["Next.js", "Tailwind", "TypeScript"],
-  "liveUrl": "https://testproject.vercel.app",
-  "githubUrl": "https://github.com/yourusername/TestProject",
-  "date": "2026-09-07",
-  "status": "shipped"
-}

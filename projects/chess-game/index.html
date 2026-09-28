@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Chess</h1>
+
+    <div class="game">
+      <div class="board-container">
+        <div id="status" class="status"></div>
+        <div id="board" class="board"></div>
+      </div>
+
+      <div class="controls">
+        <div class="mode-select">
+          <label>
+            Game Mode:
+            <select id="mode">
+              <option value="pvp">Two Players</option>
+              <option value="ai">vs Computer (Easy)</option>
+            </select>
+          </label>
+          <label>
+            Color to Play:
+            <select id="color">
+              <option value="white">White</option>
+              <option value="black">Black</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="newGame">New Game</button>
+          <button id="undo">Undo</button>
+          <button id="flip">Flip Board</button>
+          <button id="hint">Hint</button>
+        </div>
+
+        <div class="move-list">
+          <h3>Moves</h3>
+          <ol id="moves"></ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="promotionModal" class="modal">
+      <div class="modal-content">
+        <h3>Promote Pawn</h3>
+        <div class="promotion-options" id="promotionOptions"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="ui.js"></script>
+</body>
+</html>
